@@ -8509,6 +8509,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1117374924}
   m_CullTransparentMesh: 1
+--- !u!4 &1137512342 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7917674758919744168, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
+  m_PrefabInstance: {fileID: 1373153106}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1138640740
 GameObject:
   m_ObjectHideFlags: 0
@@ -10599,8 +10604,50 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52f010d78292deb4db80a040e6b233bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  handTransform: {fileID: 1293885547}
-  rotationThreshold: 300
+  leftHand: {fileID: 1137512342}
+  rightHand: {fileID: 1293885547}
+  leftGripAction:
+    m_UseReference: 0
+    m_Action:
+      m_Name: Left Grip
+      m_Type: 0
+      m_ExpectedControlType: Button
+      m_Id: d1e7d160-eaaa-4fd3-9ec2-36963acc20b3
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings:
+      - m_Name: 
+        m_Id: ac971a8b-3fe9-416d-93f2-1592ed57b6a2
+        m_Path: <XRController>{LeftHand}/{TriggerButton}
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Left Grip
+        m_Flags: 0
+      m_Flags: 0
+    m_Reference: {fileID: 0}
+  rightGripAction:
+    m_UseReference: 0
+    m_Action:
+      m_Name: Right Grip
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 732ebc86-7a58-434e-a53a-27d06163a746
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings:
+      - m_Name: 
+        m_Id: 2d0b9e79-90f3-4313-b928-ceb08686ae60
+        m_Path: <XRController>{RightHand}/{TriggerButton}
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Right Grip
+        m_Flags: 0
+      m_Flags: 0
+    m_Reference: {fileID: 0}
+  spinRotationThreshold: 300
+  fanMoveThreshold: 0.5
   detectionInterval: 0.1
 --- !u!114 &1415647738 stripped
 MonoBehaviour:
