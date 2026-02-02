@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ClearConfirmation : MonoBehaviour
 {
@@ -20,10 +21,7 @@ public class ClearConfirmation : MonoBehaviour
         Debug.Log($"{gauge.gameObject.name} がクリアを報告しました！");
 
         // 現在クリアしている数を確認
-        foreach (var g in gauges)
-        {
-            if (g.IsCleared()) clearedCount++;
-        }
+        clearedCount++;
 
         Debug.Log($"現在クリアしているキャラ数: {clearedCount} / {gauges.Count}");
 
@@ -31,6 +29,7 @@ public class ClearConfirmation : MonoBehaviour
         if (clearedCount == gauges.Count)
         {
             Debug.Log("全員クリア！");
+            SceneManager.LoadScene("ResultScene");
         }
     }
 }
