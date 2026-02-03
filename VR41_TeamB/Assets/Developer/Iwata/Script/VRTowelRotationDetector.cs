@@ -77,7 +77,7 @@ public class B_VRTowelRotationDetector : MonoBehaviour
             CurrentMode = Mode.TwoHanded;
         else if (leftPressed ^ rightPressed)
             CurrentMode = Mode.Spin;
-        else 
+        else
             CurrentMode = Mode.None;
 
 
@@ -129,13 +129,16 @@ public class B_VRTowelRotationDetector : MonoBehaviour
         }
         else
         {
-            if (wasHitBoxActive)
-            {
-                HapticsManager.Instance.Release();
-                wasHitBoxActive = false;
-            }
+
             if (hitBoxInstance != null)
+            {
+                if (wasHitBoxActive)
+                {
+                    HapticsManager.Instance.Release();
+                    wasHitBoxActive = false;
+                }
                 Destroy(hitBoxInstance);
+            }
         }
     }
 
