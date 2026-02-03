@@ -5,6 +5,8 @@ public class B_VRTowelGrabController : MonoBehaviour
     public B_VRTowelRotationDetector detector;
     public GameObject handlePrefab;
 
+    private Transform Offset;
+
     private GameObject handleInstance;
 
     void Start()
@@ -33,6 +35,11 @@ public class B_VRTowelGrabController : MonoBehaviour
         {
             handleInstance.transform.position =
                 (detector.leftHand.position + detector.rightHand.position) * 0.5f;
+
+
+            handleInstance.transform.rotation =
+    Offset.rotation * Quaternion.Euler(0f, 180f, 0f);
+
         }
     }
 }
