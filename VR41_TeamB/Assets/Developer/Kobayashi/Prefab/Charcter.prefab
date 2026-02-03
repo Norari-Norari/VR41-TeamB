@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7513370167888871490}
-  - component: {fileID: 1608679909624024633}
   - component: {fileID: -6572977492011634259}
   - component: {fileID: -1305959133936102936}
   - component: {fileID: -8900856122268684793}
+  - component: {fileID: 3340180673165885885}
   m_Layer: 0
   m_Name: Charcter
   m_TagString: Untagged
@@ -36,28 +36,6 @@ Transform:
   - {fileID: 8781088800408269162}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &1608679909624024633
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6496964662379858355}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!114 &-6572977492011634259
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -88,7 +66,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   temperatureGauge: {fileID: -6572977492011634259}
   minValue: 0
-  maxValue: 100
+  maxValue: 1
   increaseSpeed: 10
   maxSatisfaction: 70
   minSatisfaction: 50
@@ -111,6 +89,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetTag: HitBox
   gauge: {fileID: -6572977492011634259}
+--- !u!65 &3340180673165885885
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6496964662379858355}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 2, z: 1}
+  m_Center: {x: 30.5, y: 3, z: 1.4}
 --- !u!1001 &9103473318035691137
 PrefabInstance:
   m_ObjectHideFlags: 0
