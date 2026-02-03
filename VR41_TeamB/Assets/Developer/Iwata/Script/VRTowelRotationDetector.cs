@@ -47,7 +47,7 @@ public class B_VRTowelRotationDetector : MonoBehaviour
 
     private GameObject hitBoxInstance;
 
-
+    private bool wasHitBoxActive = false;
 
     void Start()
     {
@@ -120,9 +120,20 @@ public class B_VRTowelRotationDetector : MonoBehaviour
             hitBoxInstance.transform.rotation = baseTransform.rotation;
 
             //コントローラー振動
+
+            if (!wasHitBoxActive)
+            {
+                HapticsManager.Instance.Request();
+                wasHitBoxActive = true;
+            }
         }
         else
         {
+            if (wasHitBoxActive)
+            {
+                HapticsManager.Instance.Release();
+                wasHitBoxActive = false;
+            }
             if (hitBoxInstance != null)
                 Destroy(hitBoxInstance);
         }
