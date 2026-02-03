@@ -31,6 +31,10 @@ public class B_VRTowelRotationDetector : MonoBehaviour
     public enum Mode { None, TwoHanded, Spin }
     public Mode CurrentMode { get; private set; } = Mode.None;
 
+    public bool IsGrabbing { get; private set; }
+
+    public System.Action OnGrabStart;
+    public System.Action OnGrabEnd;
     public bool IsSpinning { get; private set; }
     public bool IsFanning { get; private set; }
 
@@ -62,10 +66,12 @@ public class B_VRTowelRotationDetector : MonoBehaviour
             CurrentMode = Mode.TwoHanded;
         else if (leftPressed ^ rightPressed)
             CurrentMode = Mode.Spin;
-        else
+        else 
             CurrentMode = Mode.None;
+        
+            
 
-        timer += Time.deltaTime;
+            timer += Time.deltaTime;
         if (timer >= detectionInterval)
         {
             DetectMotion();
