@@ -47,7 +47,7 @@ public class B_VRTowelRotationDetector : MonoBehaviour
 
     private GameObject hitBoxInstance;
 
-
+    private bool wasHitBoxActive = false;
 
     void Start()
     {
@@ -77,7 +77,7 @@ public class B_VRTowelRotationDetector : MonoBehaviour
             CurrentMode = Mode.TwoHanded;
         else if (leftPressed ^ rightPressed)
             CurrentMode = Mode.Spin;
-        else 
+        else
             CurrentMode = Mode.None;
 
 
@@ -120,11 +120,25 @@ public class B_VRTowelRotationDetector : MonoBehaviour
             hitBoxInstance.transform.rotation = baseTransform.rotation;
 
             //コントローラー振動
+
+            if (!wasHitBoxActive)
+            {
+                HapticsManager.Instance.Request();
+                wasHitBoxActive = true;
+            }
         }
         else
         {
+
             if (hitBoxInstance != null)
+            {
+                if (wasHitBoxActive)
+                {
+                    HapticsManager.Instance.Release();
+                    wasHitBoxActive = false;
+                }
                 Destroy(hitBoxInstance);
+            }
         }
     }
 
