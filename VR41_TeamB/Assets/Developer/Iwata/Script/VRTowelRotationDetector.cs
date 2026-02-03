@@ -68,10 +68,21 @@ public class B_VRTowelRotationDetector : MonoBehaviour
             CurrentMode = Mode.Spin;
         else 
             CurrentMode = Mode.None;
-        
-            
 
-            timer += Time.deltaTime;
+
+        // ---- ’Í‚Ýó‘Ô‚Ì‘JˆÚ”»’è ----
+        if (CurrentMode == Mode.TwoHanded && !IsGrabbing)
+        {
+            IsGrabbing = true;
+            OnGrabStart?.Invoke();
+        }
+        else if (CurrentMode != Mode.TwoHanded && IsGrabbing)
+        {
+            IsGrabbing = false;
+            OnGrabEnd?.Invoke();
+        }
+
+        timer += Time.deltaTime;
         if (timer >= detectionInterval)
         {
             DetectMotion();
