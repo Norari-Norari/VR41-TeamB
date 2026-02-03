@@ -38,6 +38,17 @@ public class B_VRTowelRotationDetector : MonoBehaviour
     public bool IsSpinning { get; private set; }
     public bool IsFanning { get; private set; }
 
+    //ヒットボックス出現判定
+    public bool IsHitBox { get { return IsFanning || IsSpinning; } }
+
+    [Header("HitBox")]
+    public GameObject hitBoxPrefab;
+    public float hitBoxDistance = 0.3f;
+
+    private GameObject hitBoxInstance;
+
+
+
     void Start()
     {
         if (leftHand == null || rightHand == null)
@@ -92,6 +103,31 @@ public class B_VRTowelRotationDetector : MonoBehaviour
         Debug.Log($"Mode: {CurrentMode} | Spinning: {IsSpinning} | Fanning: {IsFanning}");
     }
 
+    /// <summary>
+    /// Hit時の判定
+    /// </summary>
+    /// <param name="baseTransform"></param>
+    private void UpdateHitBox(Transform baseTransform)
+    {
+        if (IsHitBox)
+        {
+            if (hitBoxInstance == null)
+                hitBoxInstance = Instantiate(hitBoxPrefab);
+
+            hitBoxInstance.transform.position =
+                baseTransform.position + baseTransform.forward * hitBoxDistance;
+
+            hitBoxInstance.transform.rotation = baseTransform.rotation;
+
+            //コントローラー振動
+        }
+        else
+        {
+            if (hitBoxInstance != null)
+                Destroy(hitBoxInstance);
+        }
+    }
+
     private void DetectMotion()
     {
         IsSpinning = false;
@@ -114,6 +150,11 @@ public class B_VRTowelRotationDetector : MonoBehaviour
             lastRightPos = rightHand.position;
             lastLeftRot = leftHand.rotation;
             lastRightRot = rightHand.rotation;
+
+
+            Transform dummy = leftHand; // forward基準だけ使うなら片手でOK
+            UpdateHitBox(dummy);
+
             return;
         }
 
@@ -147,6 +188,8 @@ public class B_VRTowelRotationDetector : MonoBehaviour
                     lastLeftRot = currentRot;
                 else
                     lastRightRot = currentRot;
+
+                UpdateHitBox(activeHand);
             }
         }
 
