@@ -924,7 +924,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resultPrefab: {fileID: 6496964662379858355, guid: 63facc5244b80b64cb263bdd2c547f73, type: 3}
   spawnRoot: {fileID: 1670009125}
-  radius: 5
+  radius: 3
 --- !u!4 &1670009125
 Transform:
   m_ObjectHideFlags: 0
