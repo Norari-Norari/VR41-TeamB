@@ -1098,6 +1098,8 @@ MonoBehaviour:
   spinRotationThreshold: 300
   fanMoveThreshold: 0.5
   detectionInterval: 0.1
+  hitBoxPrefab: {fileID: 0}
+  hitBoxDistance: 0.3
 --- !u!1001 &1488633433
 PrefabInstance:
   m_ObjectHideFlags: 0

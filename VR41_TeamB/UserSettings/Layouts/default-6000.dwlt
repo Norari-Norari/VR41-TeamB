@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1521.6
     height: 758.4
   m_ShowMode: 4
-  m_Title: Inspector
+  m_Title: Console
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -120,7 +120,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 100}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 93
+  controlID: 18
   draggingID: 0
 --- !u!114 &6
 MonoBehaviour:
@@ -146,7 +146,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 50
+  controlID: 19
   draggingID: 0
 --- !u!114 &7
 MonoBehaviour:
@@ -172,7 +172,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 51
+  controlID: 20
   draggingID: 0
 --- !u!114 &8
 MonoBehaviour:
@@ -238,7 +238,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: ProjectBrowser
+  m_Name: ConsoleWindow
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -247,14 +247,14 @@ MonoBehaviour:
     y: 415.2
     width: 835.2
     height: 287.2
-  m_MinSize: {x: 231, y: 276}
-  m_MaxSize: {x: 10001, y: 10026}
-  m_ActualView: {fileID: 17}
+  m_MinSize: {x: 101, y: 126}
+  m_MaxSize: {x: 4001, y: 4026}
+  m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 17}
   - {fileID: 18}
-  m_Selected: 0
-  m_LastSelected: 1
+  m_Selected: 1
+  m_LastSelected: 0
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -872,9 +872,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: -5.9313555, y: 0.98937035, z: -3.8050194}
+    m_Target: {x: -9.359104, y: -0.47730136, z: 8.479397}
     speed: 2
-    m_Value: {x: -5.9313555, y: 0.98937035, z: -3.8050194}
+    m_Value: {x: -9.359104, y: -0.47730136, z: 8.479397}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -915,18 +915,18 @@ MonoBehaviour:
         m_Value: 0
       m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
       m_Pivot: {x: 0, y: 0, z: 0}
-      m_Size: {x: 0, y: 0}
+      m_Size: {x: 1, y: 1}
     m_ShowGrid: 1
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.016376723, y: -0.8262626, z: 0.024426067, w: 0.5627744}
+    m_Target: {x: 0.11809502, y: -0.4605711, z: 0.062105358, w: 0.8777206}
     speed: 2
-    m_Value: {x: -0.016374355, y: 0.8261429, z: -0.024422536, w: -0.56269294}
+    m_Value: {x: -0.11809502, y: 0.46057108, z: -0.062105354, w: -0.8777206}
   m_Size:
-    m_Target: 4.223033
+    m_Target: 6.1126103
     speed: 2
-    m_Value: 4.223033
+    m_Value: 6.1126103
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -944,7 +944,7 @@ MonoBehaviour:
     m_FarClip: 10000
     m_DynamicClip: 1
     m_OcclusionCulling: 0
-  m_LastSceneViewRotation: {x: 0, y: 0, z: 0, w: 0}
+  m_LastSceneViewRotation: {x: -0.1171063, y: -0.8403526, z: 0.20082562, w: -0.4897651}
   m_LastSceneViewOrtho: 0
   m_Viewpoint:
     m_SceneView: {fileID: 13}
@@ -1001,7 +1001,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 4653feff7877feff4e83feff5eb5feffd0d9feff5adcfeff7ee5feffecf2feffaefcfeffd010fffff443ffffea4effffe059ffffde64ffffa270ffff5e71ffff68b4ffff72b4ffffe0c5ffff62c6ffff3ed0ffff1cdafffff8e3ffffd4edffff16fbffff5a640100
+      m_ExpandedIDs: 14fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1237,8 +1237,8 @@ MonoBehaviour:
     m_TextWithWhitespace: "Project\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 0
-    y: 439.2
+    x: 7.2000003
+    y: 501.6
     width: 834.2
     height: 261.2
   m_SerializedDataModeController:
@@ -1263,7 +1263,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Developer/Kobayashi/Scene
+    - Assets/Developer/Kobayashi/Prefab
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -1273,16 +1273,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Developer/Kobayashi/Scene
+  - Assets/Developer/Kobayashi/Prefab
   m_LastFoldersGridSize: -1
   m_LastProjectPath: "C:\\Users\\sya48\\OneDrive\\\u30C9\u30AD\u30E5\u30E1\u30F3\u30C8\\VR41-TeamB\\VR41_TeamB"
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 120}
-    m_SelectedIDs: 3cd70000
-    m_LastClickedID: 55100
-    m_ExpandedIDs: 00000000c8d10000cad10000ccd10000ced10000
+    m_SelectedIDs: 4ed20000
+    m_LastClickedID: 53838
+    m_ExpandedIDs: 000000004ad200004cd200004ed2000050d20000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1311,7 +1311,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000c8d10000cad10000ccd10000ced10000
+    m_ExpandedIDs: 000000004ad200004cd200004ed2000050d20000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1339,7 +1339,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000b2d9000030da0000c0da0000d0db0000fcad0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -1390,8 +1390,8 @@ MonoBehaviour:
     m_TextWithWhitespace: "Console\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 7.2000003
-    y: 501.6
+    x: 0
+    y: 439.2
     width: 834.2
     height: 261.2
   m_SerializedDataModeController:

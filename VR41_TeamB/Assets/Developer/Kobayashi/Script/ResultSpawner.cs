@@ -6,6 +6,7 @@ public class ResultSpawner : MonoBehaviour
     [SerializeField] private Transform spawnRoot;
     [SerializeField] private float radius = 3.0f;
 
+    [SerializeField] private AudioClip applauseSE;
     void Start()
     {
         int count = ClearConfirmation.clearedCount;
@@ -15,7 +16,7 @@ public class ResultSpawner : MonoBehaviour
         if (count <= 0) return;
 
         float angleStep = 360f / count;
-
+        Transform[] characters = new Transform[count];
         for (int i = 0; i < count; i++)
         {
             float angle = angleStep * i * Mathf.Deg2Rad;
@@ -35,8 +36,11 @@ public class ResultSpawner : MonoBehaviour
                 spawnRoot
             );
 
+            characters[i] = obj.transform;
+
             // ’†SispawnRootj‚ðŒ©‚é‚æ‚¤‚É‰ñ“]‚³‚¹‚½‚¢ê‡
             obj.transform.LookAt(spawnRoot);
         }
+        AudioManager.Instance.PlayApplause3D(applauseSE, characters);
     }
 }

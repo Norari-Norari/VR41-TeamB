@@ -67,6 +67,7 @@ public class AudioManager : B_SingletonMonoBehaviour<AudioManager>
             return;
 
         int count = characters.Length;
+        Debug.Log(count);
 
         // 人数が増えても爆音にならないよう正規化
         float volumePerSound =
@@ -80,7 +81,7 @@ public class AudioManager : B_SingletonMonoBehaviour<AudioManager>
 
             // 位置をキャラに合わせる
             src.transform.position = ch.position;
-
+            src.loop = true;
             // 3Dサウンド設定
             src.spatialBlend = 1.0f;   // 完全3D
             src.minDistance = 2.0f;    // 近距離
