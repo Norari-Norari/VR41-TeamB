@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class SatisfactionGauge : MonoBehaviour
 {
@@ -15,6 +16,11 @@ public class SatisfactionGauge : MonoBehaviour
     [Header("フェード設定")]
     [SerializeField] private Renderer[] renderers;
     [SerializeField] private float fadeDuration = 3.5f;
+
+    [Header("満足度スライダー関係")]
+    [SerializeField] private Slider satisFactionSlider;
+    [SerializeField] private Canvas sliderCanvas;
+
 
     [SerializeField]
     private Animator anim;
@@ -51,12 +57,18 @@ public class SatisfactionGauge : MonoBehaviour
 
         if (!isCleared)
         {
+            // スライダーの数値を変更
+            satisFactionSlider.value = currentValue / maxValue;
+            sliderCanvas.transform.rotation = Camera.main.transform.rotation;
+
+            // 満足する温度の最大＆最小値
             if (maxSatisfaction > temperatureGauge.GetValue() &&
             minSatisfaction < temperatureGauge.GetValue())
             {
                 currentValue += increaseSpeed * Time.deltaTime;
             }
 
+            // 満足度達成
             if (currentValue >= maxValue)
             {
                 Debug.Log("クリア");
