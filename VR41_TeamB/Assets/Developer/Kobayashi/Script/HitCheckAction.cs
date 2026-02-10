@@ -28,6 +28,7 @@ public class HitCheckAction : MonoBehaviour
     {
         if (other.CompareTag(targetTag))
         {
+            Debug.Log("“–‚½‚Á‚Ä‚¢‚é");
             isHit = true;
         }
     }
