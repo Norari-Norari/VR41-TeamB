@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -1305959133936102936}
   - component: {fileID: -8900856122268684793}
   - component: {fileID: 3340180673165885885}
+  - component: {fileID: 8664635498432881680}
   m_Layer: 0
   m_Name: Charcter
   m_TagString: Untagged
@@ -66,7 +67,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   temperatureGauge: {fileID: -6572977492011634259}
   minValue: 0
-  maxValue: 1
+  maxValue: 50
   increaseSpeed: 10
   maxSatisfaction: 70
   minSatisfaction: 50
@@ -110,6 +111,33 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 2, z: 1}
   m_Center: {x: 30.5, y: 3, z: 1.4}
+--- !u!54 &8664635498432881680
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6496964662379858355}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1001 &9103473318035691137
 PrefabInstance:
   m_ObjectHideFlags: 0
